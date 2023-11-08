@@ -2,9 +2,9 @@ import os
 from pdf2image import convert_from_path
 import pytesseract
 import PyPDF2
-from domain.digi_doc import DigiDoc
+from src.domain.digi_doc import DigiDoc
 
-def extract_text_from_pdf(pdf_file, number_of_pages = 3):
+def extract_text_from_pdf(pdf_file, number_of_pages = 1):
     # Convierte el PDF en imágenes
     images = convert_from_path(pdf_file)
     # Inicializa el texto extraído
@@ -18,7 +18,7 @@ def extract_text_from_pdf(pdf_file, number_of_pages = 3):
         pages += 1
         if pages == number_of_pages:
             break
-    return extracted_text
+    return [extracted_text, pages]
 
 def get_pdf_metadata(pdf_file):
     metadata = {}
@@ -35,8 +35,8 @@ def get_pdf_metadata(pdf_file):
         metadata['Fecha de modificación'] = info.modification_date
     return metadata
 
-
-def pdf_to_digidoc_mapper(pdf_path: str) -> DigiDoc:
-    extracted_text = extract_text_from_pdf(pdf_path, 1)
+def pdf_to_digidoc_mapper(pdf_path: str, number_of_pages = 1) -> DigiDoc:
+    extracted_text, pages = extract_text_from_pdf(pdf_path, number_of_pages)
     metadata = get_pdf_metadata(pdf_path)
+    metadata['Páginas procesadas con OCR'] = pages
     return DigiDoc(pdf_path, os.path.basename(pdf_path), extracted_text, metadata)

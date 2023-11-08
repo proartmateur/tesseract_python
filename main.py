@@ -1,7 +1,7 @@
-import os
 from pprint import pprint
 
-from infrastructure.pdf_to_digidoc_mapper import pdf_to_digidoc_mapper
+from src.use_cases.multiple_files import multiple_files
+from src.use_cases.single_file import single_file
 
 
 def extract_all_files():
@@ -9,10 +9,13 @@ def extract_all_files():
 
 if __name__ == '__main__':
     # Ejemplo de uso
-    pdf_file = 'smart_bin/American McGee - Art of Alice_ Madness Returns-Dark Horse Books (2011).pdf'
+    print("Ejecutando single_file")
     pdf_file = 'smart_bin/reporteSemanasCotizadas_461.pdf'
-
-    digi_doc = pdf_to_digidoc_mapper(pdf_file)
+    digi_doc = single_file(pdf_file, 2)
     pprint(digi_doc)
+
+    print("Ejecutando multiple_files")
+    pdf_dir = 'smart_bin'
+    docs = multiple_files(pdf_dir)
 
 
