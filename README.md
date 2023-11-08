@@ -4,7 +4,7 @@
 
 ### ¿Qué es OCR?
 
-**OCR** proviene del inglés **O***ptical **C**haracter **R**ecognition.
+**OCR** proviene del inglés **O**ptical **C**haracter **R**ecognition.
 Es una técnica para detectar texto de una imagen. Esto es parte del procesamiento
 de imágenes en ciencias de la computación.
 
