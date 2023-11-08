@@ -84,6 +84,26 @@ Esta funcionará como carpeta que contiene los PDF de los cuales se va a obtener
 ### main.py
 Es el punto de arranque(Entry Point) de todo y un ejemplo de como usar los casos de uso 
 
+## ¿Cómo instalar el ejmplo?
+1 - Hay que preparar un entorno de python 3.9 o superior, esto se puede hacer con Virtual Env
+o instalando directamente la versión de python en el equipo.
 
+2 - Abrir la terminal
+
+3 - Dirigirse a la carpeta del proyecto
+
+4 - Correr Virtual Env(en caso de usar este método)
+
+5 - Ejecutar el comando: 
+```
+$ pip install -r requirements.txt
+```
+
+6 - Esperar a que se terminen de instalar todas las dependencias
+
+7 - Ejecutar el entry point:
+ ```
+ $ python3 main.py 
+ ```
 [Conceptos clave referencias](https://nanonets.com/blog/ocr-with-tesseract/#:~:text=Pytesseract%20or%20Python%2Dtesseract%20is,image%20to%20text%20use%20cases.)
     

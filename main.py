@@ -17,5 +17,7 @@ if __name__ == '__main__':
     print("Ejecutando multiple_files")
     pdf_dir = 'smart_bin'
     docs = multiple_files(pdf_dir)
+    for digi_doc_a in docs:
+        pprint(digi_doc_a)
 
 
